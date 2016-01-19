@@ -40,17 +40,17 @@ gulp.task('minifyhtml', function() {
 
 gulp.task('minifypizza', function() {
   return gulp.src('src/views/pizza.html')
+    .pipe(inlinesource())
     .pipe(minifyhtml({
       removeComments: true,
       removeCommentsFromCDATA: true,
       collapseWhitespace: true,
       collapseInlineTagWhitespace: true,
-      minifyJS: true
     }))
     .pipe(gulp.dest('dist/views'));
 });
 
-// Minify print.css
+// Minify CSS
 gulp.task('minifyprint', function() {
   return gulp.src('src/css/print.css')
     .pipe(minifycss({
@@ -59,11 +59,25 @@ gulp.task('minifyprint', function() {
     .pipe(gulp.dest('dist/css'));
 });
 
-// Minify perfmatters.js
+gulp.task('minifyboot', function() {
+  return gulp.src('src/views/css/bootstrap-grid.css')
+    .pipe(minifycss({
+      compatibility: 'ie8'
+    }))
+    .pipe(gulp.dest('dist/views/css'));
+});
+
+// Minify JS
 gulp.task('minifyper', function() {
   return gulp.src('src/js/perfmatters.js')
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'))
 });
 
-gulp.task('default', ['imagemin', 'minifypizza', 'minifyhtml', 'minifyper', 'minifyprint']);
+gulp.task('minifymain', function() {
+  return gulp.src('src/views/js/main.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/views/js'))
+});
+
+gulp.task('default', ['imagemin', 'minifypizza', 'minifyhtml', 'minifyper', 'minifyprint', 'minifyboot', 'minifymain']);
