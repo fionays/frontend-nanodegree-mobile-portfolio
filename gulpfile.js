@@ -14,14 +14,14 @@ gulp.task('imagemin', function() {
   	.pipe(gulp.dest('dist/img'));
 });
 
-// // Compress src/views/images 
-// gulp.task('imageminViews', function() {
-//   return gulp.src('src/views/images/*')
-//     .pipe(imagemin({
-//       progressive: true
-//     }))
-//     .pipe(gulp.dest('dist/views/images'));
-// });
+// Compress src/views/images 
+gulp.task('imageminViews', function() {
+  return gulp.src('src/views/images/*')
+    .pipe(imagemin({
+      progressive: true
+    }))
+    .pipe(gulp.dest('dist/views/images'));
+});
 
 // Inline CSS and minify html
 gulp.task('minifyhtml', function() {
