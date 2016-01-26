@@ -529,7 +529,7 @@ function updatePositions() {
 
   for (var i = 0; i < items.length; i++) {
     var phaseData = phase[i % 5];
-    var pixel = items[i].basicLeft + 100 * phaseData + 'px';
+    var pixel = items[i].basicLeft + phaseData + 'px';
 
     // Optimize: use transform to avoid relayout and repaint.
     items[i].style.transform = 'translateX(' + pixel + ')';
@@ -566,7 +566,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Optimize: move calculations outside loop.
   var movingPizzas1 = document.querySelector("#movingPizzas1");  
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < 30; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
