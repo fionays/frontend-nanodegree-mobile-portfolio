@@ -80,4 +80,4 @@ gulp.task('minifymain', function() {
     .pipe(gulp.dest('dist/views/js'))
 });
 
-gulp.task('default', ['imagemin', 'minifypizza', 'minifyhtml', 'minifyper', 'minifyprint', 'minifyboot', 'minifymain']);
+gulp.task('default', ['imagemin', 'imageminViews', 'minifypizza', 'minifyhtml', 'minifyper', 'minifyprint', 'minifyboot', 'minifymain']);
