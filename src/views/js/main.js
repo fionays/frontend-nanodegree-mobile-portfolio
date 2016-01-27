@@ -560,10 +560,22 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
 
+  // Calculate the # of moving pizza
+  var pizzaRow = Math.ceil(window.innerWidth / s);
+  var pizzaCol = Math.ceil(window.innerHeight / 100);
+  var numbers = pizzaRow * pizzaCol;
+
+  console.log("pizzaRow = " + pizzaRow);
+  console.log("pizzaCol = " + pizzaCol);
+  console.log("number of piiza = " + numbers);
+
+  // assign the number of columns to the cols variable so your pizzas are distributed correctly.
+  cols = pizzaRow;
+
   // Optimize: move calculations outside loop.
   var movingPizzas1 = document.querySelector("#movingPizzas1");  
-  var offset = window.get
-  for (var i = 0; i < 30; i++) {
+  
+  for (var i = 0; i < numbers; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
