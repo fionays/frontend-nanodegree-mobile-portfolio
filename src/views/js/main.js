@@ -519,20 +519,16 @@ function updatePositions() {
 
   // Optimize: move the calculation outside the for loop.
   var scrollPosi = document.body.scrollTop / 1250;
-  var phase = [
-      Math.sin(scrollPosi) * 100, 
-      Math.sin(scrollPosi + 1) * 100,
-      Math.sin(scrollPosi + 2) * 100,
-      Math.sin(scrollPosi + 3) * 100, 
-      Math.sin(scrollPosi + 4) * 100
-  ];
-
+  var phase = [];
+  for (var i = 0; i <5; i++) {
+    phase.push(Math.sin(scrollPosi + i) * 100);
+  }
+ 
   for (var i = 0; i < items.length; i++) {
     var phaseData = phase[i % 5];
-    var pixel = items[i].basicLeft + phaseData + 'px';
-
     // Optimize: use transform to avoid relayout and repaint.
-    items[i].style.transform = 'translateX(' + pixel + ')';
+     items[i].style.transform = 'translateX(' + phaseData + 'px' + ')';
+    // items[i].style.left = pixel;
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -566,6 +562,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Optimize: move calculations outside loop.
   var movingPizzas1 = document.querySelector("#movingPizzas1");  
+  var offset = window.get
   for (var i = 0; i < 30; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
@@ -573,6 +570,8 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
+    // establish the pizzas starting position, the initial left value
+    elem.style.left = elem.basicLeft + 'px';
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     movingPizzas1.appendChild(elem);
   }
