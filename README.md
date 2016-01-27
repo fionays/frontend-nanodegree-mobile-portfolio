@@ -9,7 +9,6 @@ The goals of this project are:
 #### Build Tool:
 Gulp is used to automatically optimize this project.
 1. Install gulp globally
->>>>>>> Make Markdown format work properly.
 
 ``` bash
   $> npm install gulp -g
@@ -73,7 +72,7 @@ $> git clone
 6. Compress images using gulp.
 
 #### Part 2: Optimize Frames per Second in pizza.html
->>>>>>> Make Markdown format work properly.
+
 1. Move some calculations and variables outside loops in main.js
 2. Use requestAnimationFrame in main.js
 3. Modify resizePizzas function to make it resize pizza in less than 5ms.
