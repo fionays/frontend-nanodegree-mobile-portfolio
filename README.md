@@ -5,23 +5,24 @@ The goals of this project are:
 * Perform optimizations ensuring a consistent frame rate at **60fps** when scrolling in _pizza.html_.
 * Time to resize pizzas is **less than 5 ms** in _pizza.html_ shown in the browser console.
   
-###Build Tool:
-Gulp is used to automatically optimize this project. Before install Gulp, please in stall [Node.js](https://nodejs.org/en/download/) first.
-
-####Installing gulp globally
+  
+#### Build Tool:
+Gulp is used to automatically optimize this project.
+1. Install gulp globally
+>>>>>>> Make Markdown format work properly.
 
 ``` bash
   $> npm install gulp -g
   ```
 
-####Installing gulp locally
+#### Installing gulp locally
 
 ``` bash
   $> cd /path/to/your-project-folder
   $> npm install gulp --save-dev
   ```
   
-####Installing plugins
+#### Installing plugins
 First create `package.json` file at the root of the project. 
 
  ``` bash
@@ -31,14 +32,14 @@ First create `package.json` file at the root of the project.
   $> npm install gulp-uglify --save-dev
   $> npm install gulp-minify-css --save-dev
   ```
-####Running Gulp tasks
+#### Running Gulp tasks
 Create `gulpfile.js` which contains all the Gulp tasks at the root of the project. 
 Run Gulp at the command line:
 ```bash
 $> gulp
 ```
 
-###Running this application
+### Running this application
 
 1. Check out the repository
   ```bash
@@ -61,9 +62,9 @@ $> git clone
   ```
 5. Use the URL given by ngrok to test at [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/).
 
-###The optimizations I performed
+### The optimizations I performed
 
-####Part 1: Optimize PageSpeed Insights score for index.html
+#### Part 1: Optimize PageSpeed Insights score for index.html
 1. Inline style.css
 2. Inline web fonts
 3. Use media query for pint.css
@@ -71,7 +72,8 @@ $> git clone
 5. Minify all JavaScripts, CSS, html
 6. Compress images using gulp.
 
-#####Part 2: Optimize Frames per Second in pizza.html
+#### Part 2: Optimize Frames per Second in pizza.html
+>>>>>>> Make Markdown format work properly.
 1. Move some calculations and variables outside loops in main.js
 2. Use requestAnimationFrame in main.js
 3. Modify resizePizzas function to make it resize pizza in less than 5ms.
