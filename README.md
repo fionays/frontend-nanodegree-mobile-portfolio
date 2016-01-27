@@ -34,12 +34,16 @@ First create `package.json` file at the root of the project.
 ####Running Gulp tasks
 Create `gulpfile.js` which contains all the Gulp tasks at the root of the project. 
 Run Gulp at the command line:
-`bash $> gulp`
+```bash
+$> gulp
+```
 
 ###Running this application
 
 1. Check out the repository
-  `$> git clone `
+  ```bash
+$> git clone 
+```
 
 2. Run a local server
 
